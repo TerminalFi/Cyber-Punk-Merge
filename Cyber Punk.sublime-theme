@@ -4,9 +4,9 @@
         "foreground": "var(--foreground)",
         "background": "var(--background)",
         "transparent": "transparent",
-        "accentLight": "color(var(background) l(+ 2%))",
-        "accentLighter": "color(var(background) l(+ 4%))",
-        "accentLightest": "color(var(background) l(+ 10%))",
+        "accentLight": "color(var(foreground) blend(var(background) 5%)))",
+        "accentLighter": "color(var(foreground) blend(var(background) 7%)))",
+        "accentLightest": "color(var(foreground) blend(var(background) 9%)))",
         "labelColor": "var(foreground)",
         "helpLabelColor": "color(var(foreground) a(0.6))",
         "branchStatsLabelFg": "var(foreground)",
@@ -33,7 +33,7 @@
         "preferencesSectionTableBg": "var(background)",
         "preferencesSectionTableRowBg": "color(var(foreground) blend(var(background) 10%)))",
         "preferencesOverlayLeft": "var(background)",
-        "locationBarFg": "var(foreground)",
+        "locationBarFg": "var(--purplish)",
         "locationBarHeadingFg": "var(foreground)",
         "locationBarHeadingShadow": "black",
         "locationBarRowBg": "color(var(foreground) blend(var(background) 5%)))",
@@ -41,14 +41,14 @@
         "disclosureFg": "var(foreground)",
         "commitListBg": "var(accentLight)",
         "commitRowBgHover": "color(var(foreground) blend(var(background) 10%)))",
-        "commitSummaryFgPrimary": "var(foreground)",
-        "commitSummaryFgSecondary": "var(foreground)",
+        "commitSummaryFgPrimary": "var(--greenish)",
+        "commitSummaryFgSecondary": "var(--yellowish)",
         "commitEdge0": "var(--bluish)",
         "commitEdge1": "var(--purplish)",
         "commitEdge2": "var(--redish)",
-        "commitEdge3": "color(var(--orangish) l(- 10%))",
+        "commitEdge3": "var(--orangish)",
         "commitEdge4": "var(--yellowish)",
-        "commitEdge5": "color(var(--cyanish) l(50%))",
+        "commitEdge5": "var(--cyanish)",
         "sideBarContainerBg": "color(var(foreground) blend(var(background) 5%)))",
         "sideBarContainerBgWithGraph": "color(var(foreground) blend(var(background) 5%)))",
         "tableOfContentsBg": "var(background)",
@@ -59,7 +59,7 @@
         "detailPanelBg": "var(background)",
         "fieldNameFg": "var(foreground)",
         "authorFg": "color(var(foreground) a(0.4))",
-        "terminatorFg": "var(foreground)",
+        "terminatorFg": "var(--purplish)",
         "outputSucceededFg": "var(--greenish)",
         "outputFailedFg": "var(--redish)",
         "outputRunningFg": "var(--cyanish)",
@@ -90,7 +90,7 @@
         "insertedAnnBg": "var(--cyanish)",
         "deletedAnnBg": "var(--redish)",
         "fileDiffShadow": "color(black a(0.5))",
-        "fileIconBg": "color(white a(0.2))",
+        "fileIconBg": "var(--orangish)",
         "hunkButtonFg": "var(foreground)",
         "hunkButtonShadow": "color(black a(0.5))",
         "fileHeaderBg": "var(background)",
@@ -181,12 +181,12 @@
         "hazardButtonBg": "var(--redish)",
         "repositoryTabBarBg": "var(accentLight)",
         "repositoryTabBarBorderBg": "var(background)",
-        "fileBadgeModifiedLeftFg": "var(foreground)",
+        "fileBadgeModifiedLeftFg": "var(background)",
         "fileBadgeModifiedRightFg": "var(--redish)",
-        "fileBadgeModifiedBg": "color(white a(0.2))",
-        "fileBadgeModifiedHover": "color(var(foreground) a(0.35))",
+        "fileBadgeModifiedBg": "var(--yellowish)",
+        "fileBadgeModifiedHover": "color(var(--yellowish) a(0.85))",
         "fileBadgeUnmergedFg": "var(foreground)",
-        "fileBadgeUnmergedBg": "color(white a(0.2))",
+        "fileBadgeUnmergedBg": "var(--greenish)",
         "fileBadgeUnmergedHover": "color(var(foreground) a(0.35))",
         "fileBadgeUntrackedBg": "color(white a(0.2))",
         "fileBadgeUntrackedHover": "color(var(foreground) a(0.35))",
@@ -263,13 +263,13 @@
             "class": "console_panel",
             "layer0.tint": "var(consoleBorder)",
             "layer0.opacity": 1,
-            "content_margin": [1, 1]
+            "content_margin": [0, 1]
         },
         {
             "class": "panel_grid_control",
             "inside_spacing": 0,
             "outside_vspacing": 0,
-            "outside_hspacing": 0
+            "outside_hspacing": 1
         },
         {
             "class": "root_tabs",
@@ -1791,7 +1791,7 @@
         {
             "class": "location_bar_label",
             "font.bold": false,
-            "color": "var(locationBarFg)"
+            "color": "var(foreground)"
         },
         {
             "class": "location_bar_label",
@@ -1945,16 +1945,8 @@
                     "class": "button_control icon_button filter_button"
                 }
             ],
-            "layer1.tint": "var(foreground)"
-        },
-        {
-            "class": "icon_filter",
-            "parents": [
-                {
-                    "class": "button_control icon_button filter_button"
-                }
-            ],
-            "layer0.tint": "var(foreground)"
+            "layer1.tint": "var(--redish)",
+            "layer0.tint": "var(--redish)"
         },
         {
             "class": "icon_filter",
@@ -1966,7 +1958,7 @@
                     ]
                 }
             ],
-            "layer0.tint": "var(foreground)"
+            "layer0.tint": "var(--redish)"
         },
         {
             "class": "icon_filter",
@@ -1980,7 +1972,8 @@
             ],
             "layer0.opacity": 0.25,
             "layer1.opacity": 0.75,
-            "layer1.tint": "var(foreground)"
+            "layer1.tint": "var(--redish)",
+            "layer0.tint": "var(--yellowish)"
         },
         {
             "class": "location_bar_branch_row",
@@ -2270,7 +2263,7 @@
                 }
             ],
             "font.italic": true,
-            "color": "var(commitSummaryFgSecondary)"
+            "color": "var(--orangish)"
         },
         {
             "class": "commit_file_name_label",
@@ -2346,7 +2339,7 @@
         },
         {
             "class": "submodule_light_annotation",
-            "fg": "var(submoduleLightAnnFg)",
+            "fg": "var(foreground)",
             "background_color": "var(submoduleLightAnnBg)"
         },
         {
@@ -2638,7 +2631,7 @@
             "class": "field_name_label",
             "font.italic": true,
             "font.bold": true,
-            "color": "var(foreground)"
+            "color": "var(--orangish)"
         },
         {
             "class": "separator_container",
@@ -2651,7 +2644,7 @@
         },
         {
             "class": "terminator",
-            "layer0.tint": "color(var(terminatorFg) a(0.25))",
+            "layer0.tint": "var(terminatorFg)",
             "layer0.opacity": 1,
             "content_margin": [
                 16,
@@ -2665,8 +2658,8 @@
             "attributes": [
                 "hover"
             ],
-            "layer0.tint": "color(var(terminatorFg) a(0.50))",
-            "layer0.opacity": 1
+            "layer0.tint": "var(terminatorFg)",
+            "layer0.opacity": 0.75
         },
         {
             "class": "terminator_container",
@@ -2989,7 +2982,7 @@
                 }
             ],
             "font.bold": true,
-            "shadow_color": "var(file_diff_shadow)",
+            "fg": "var(--yellowish)",
             "shadow_offset": [
                 0,
                 0
@@ -3150,7 +3143,7 @@
         },
         {
             "class": "commit_author",
-            "color": "var(foreground)"
+            "color": "var(--pinkish)"
         },
         {
             "class": "commit_author_container",
