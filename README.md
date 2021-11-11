@@ -1,1 +1,1 @@
-[Sublime Merge](default.png)
+![Sublime Merge](default.png)
