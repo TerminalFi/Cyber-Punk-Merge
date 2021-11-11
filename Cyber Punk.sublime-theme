@@ -34,6 +34,7 @@
         "preferencesSectionTableRowBg": "color(var(foreground) blend(var(background) 10%)))",
         "preferencesOverlayLeft": "var(background)",
         "locationBarFg": "var(--purplish)",
+        "locationBarSelectedFg": "var(--yellowish)",
         "locationBarHeadingFg": "var(foreground)",
         "locationBarHeadingShadow": "black",
         "locationBarRowBg": "color(var(foreground) blend(var(background) 5%)))",
@@ -68,17 +69,17 @@
         "gitOutputPanelFg": "var(foreground)",
         "toolTipFg": "var(foreground)",
         "toolTipBg": "var(accentLight)",
-        "headAnnFg": "var(background)",
+        "headAnnFg": "var(--yellowish)",
         "headAnnBg": "var(--purplish)",
-        "branchAnnFg": "var(background)",
+        "branchAnnFg": "var(--yellowish)",
         "branchAnnBg": "var(--bluish)",
-        "remoteAnnFg": "var(background)",
+        "remoteAnnFg": "var(--redish)",
         "remoteAnnBg": "var(--cyanish)",
-        "tagAnnFg": "var(background)",
+        "tagAnnFg": "var(--pinkish)",
         "tagAnnBg": "var(--yellowish)",
         "stashAnnFg": "var(background)",
         "stashAnnBg": "var(--orangish)",
-        "fileAnnFg": "var(background)",
+        "fileAnnFg": "var(--greenish)",
         "fileAnnBg": "color(var(--pinkish))",
         "fileAnnIconAheadFg": "var(--greenish)",
         "fileAnnIconBehindFg": "var(--redish)",
@@ -103,7 +104,7 @@
         "unmergedIconFg": "var(--yellowish)",
         "unmergedHeaderBg": "var(accentLighter)",
         "unmergedHeaderBgHover": "var(accentLightest)",
-        "recentIconFg": "var(--yellowish)",
+        "recentIconFg": "var(--greenish)",
         "recentIconBg": "transparent",
         "iconUninitializedSubmodule": "var(--yellowish)",
         "untrackedHeaderBg": "var(accentLight)",
@@ -188,12 +189,12 @@
         "fileBadgeUnmergedFg": "var(foreground)",
         "fileBadgeUnmergedBg": "var(--greenish)",
         "fileBadgeUnmergedHover": "color(var(foreground) a(0.35))",
-        "fileBadgeUntrackedBg": "color(white a(0.2))",
+        "fileBadgeUntrackedBg": "var(--orangish)",
         "fileBadgeUntrackedHover": "color(var(foreground) a(0.35))",
-        "fileBadgeUntrackedFg": "var(foreground)",
-        "fileBadgeStagedBg": "color(white a(0.2))",
-        "fileBadgeStagedBgHover": "color(var(foreground) a(0.35))",
-        "fileBadgeStagedFg": "var(foreground)"
+        "fileBadgeUntrackedFg": "var(background)",
+        "fileBadgeStagedBg": "var(--purplish)",
+        "fileBadgeStagedBgHover": "color(var(--purplish) a(0.85))",
+        "fileBadgeStagedFg": "var(background)"
     },
     "rules": [
         {
@@ -1799,7 +1800,7 @@
                 "selected"
             ],
             "font.bold": true,
-            "color": "var(locationBarFg)"
+            "color": "var(locationBarSelectedFg)"
         },
         {
             "class": "location_bar_heading",
@@ -2944,7 +2945,7 @@
         },
         {
             "class": "icon_text",
-            "color": "var(foreground)"
+            "color": "var(background)"
         },
         {
             "class": "file_icon",
@@ -2960,12 +2961,6 @@
                 0,
                 18
             ]
-        },
-        {
-            "class": "file_icon_left"
-        },
-        {
-            "class": "file_icon_right"
         },
         {
             "class": "table_of_contents_icon_wrapper",
